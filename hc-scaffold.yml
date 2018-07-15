@@ -1,0 +1,776 @@
+{
+  # This is a holochain scaffold yaml definition. http://ceptr.org/projects/holochain
+
+  # DNA File Version
+  # Version indicator for changes to DNA
+  "Version": "0.0.1",
+  "Generator": "hc-scaffold:0.1.0+e8a394b",
+
+  # Application DNA
+  # The DNA specifies the entry structure and functions and configuration of your application
+  "DNA": {
+
+    # DNA File Version
+    # Version indicator for changes to DNA
+    "Version": 1,
+
+    # DNA Unique ID
+    # This ID differentiates your app from others. For example, to tell one Slack team from another which same code.
+    "UUID": "9b8d256c-b907-4348-94ef-a3b489fe0e51",
+
+    # Application Name
+    # What would you like to call your holochain app?
+    "Name": "gratitude",
+
+    # Properties
+    # Properties that you want available across all Zomes.
+    "Properties": {
+
+      # Application Description
+      # Briefly describe your holochain app.
+      "description": "gratitude app demo",
+
+      # Language
+      # The base (human) language of this holochain app.
+      "language": "en"
+    },
+
+    # Properties Schema File
+    # Describes the entries in the Properties section of your dna file.
+    "PropertiesSchemaFile": "properties_schema.json",
+
+    # DHT Settings
+    # Configure the properties of your Distributed Hash Table (e.g. hash algorithm, neighborhood size, etc.).
+    "DHTConfig": {
+      "HashType": "sha2-256"
+    },
+
+    # Zomes
+    # List the Zomes your application will support.
+    "Zomes": [
+      {
+
+        # Zome Name
+        # The name of this code module.
+        "Name": "gratitude",
+
+        # Zome Description
+        # What is the purpose of this module?
+        "Description": "track gratitude for students",
+
+        # Ribosome Type
+        # What scripting language will you code in?
+        "RibosomeType": "js",
+
+        # Code File
+        # Points to the main script file for this Zome.
+        "CodeFile": "gratitude.js",
+
+        # Zome Entries
+        # Data stored and tracked by your Zome.
+        "Entries": [
+          {
+            "Name": "gratitude", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "string", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "crud"
+          },
+          {
+            "Name": "student", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "string", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "crud"
+          },
+          {
+            "Name": "gratitudeBoard", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "string", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "crud"
+          },
+          {
+            "Name": "boardLink", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "links", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "crud"
+          },
+          {
+            "Name": "studentLink", # The name of this entry.
+            "Required": true, # Is this entry required?
+            "DataFormat": "links", # What type of data should this entry store?
+            "Sharing": "public", # Should this entry be publicly accessible?
+            "_": "crud"
+          }
+        ],
+
+        # Zome Functions
+        # Functions which can be called in your Zome's API.
+        "Functions": [
+          {
+            "Name": "gratitudeCreate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:gratitude"
+          },
+          {
+            "Name": "gratitudeRead", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:gratitude"
+          },
+          {
+            "Name": "gratitudeUpdate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:gratitude"
+          },
+          {
+            "Name": "gratitudeDelete", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "d:gratitude"
+          },
+          {
+            "Name": "studentCreate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:student"
+          },
+          {
+            "Name": "studentRead", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:student"
+          },
+          {
+            "Name": "studentUpdate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:student"
+          },
+          {
+            "Name": "studentDelete", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "d:student"
+          },
+          {
+            "Name": "gratitudeBoardCreate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:gratitudeBoard"
+          },
+          {
+            "Name": "gratitudeBoardRead", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:gratitudeBoard"
+          },
+          {
+            "Name": "gratitudeBoardUpdate", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:gratitudeBoard"
+          },
+          {
+            "Name": "gratitudeBoardDelete", # The name of this function.
+            "CallingType": "string", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "d:gratitudeBoard"
+          },
+          {
+            "Name": "boardLinkCreate", # The name of this function.
+            "CallingType": "links", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:boardLink"
+          },
+          {
+            "Name": "boardLinkRead", # The name of this function.
+            "CallingType": "links", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:boardLink"
+          },
+          {
+            "Name": "boardLinkUpdate", # The name of this function.
+            "CallingType": "links", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:boardLink"
+          },
+          {
+            "Name": "boardLinkDelete", # The name of this function.
+            "CallingType": "links", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "d:boardLink"
+          },
+          {
+            "Name": "studentLinkCreate", # The name of this function.
+            "CallingType": "links", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "c:studentLink"
+          },
+          {
+            "Name": "studentLinkRead", # The name of this function.
+            "CallingType": "links", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "r:studentLink"
+          },
+          {
+            "Name": "studentLinkUpdate", # The name of this function.
+            "CallingType": "links", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "u:studentLink"
+          },
+          {
+            "Name": "studentLinkDelete", # The name of this function.
+            "CallingType": "links", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+            "_": "d:studentLink"
+          },
+          {
+            "Name": "createGratitudeForBoard", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+          },
+          {
+            "Name": "getGratitudesForBoard", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+          },
+          {
+            "Name": "setStudentName", # The name of this function.
+            "CallingType": "json", # Data format for parameters passed to this function.
+            "Exposure": "public", # Level to which is this function exposed.
+          }
+        ],
+
+        # Zome Source Code
+        # The logic that will control Zome behavior
+        "Code": "'use strict';\n\n// -----------------------------------------------------------------\n//  This stub Zome code file was auto-generated by hc-scaffold\n// -----------------------------------------------------------------\n\n// -----------------------------------------------------------------\n//  Exposed functions with custom logic https://developer.holochain.org/API_reference\n// -----------------------------------------------------------------\n\nfunction gratitudeCreate (gratitudeEntry) {\n  var gratitudeHash = commit(\"gratitude\", gratitudeEntry);\n  return gratitudeHash;\n}\n\nfunction gratitudeRead (gratitudeHash) {\n  var gratitude = get(gratitudeHash);\n  return gratitude;\n}\n\nfunction gratitudeUpdate (gratitudeHash) {\n  var sampleValue={\"extraField\":true};\n  var gratitudeOutHash = update(\"gratitude\", sampleValue, gratitudeHash);\n  return gratitudeOutHash;\n}\n\nfunction gratitudeDelete (gratitudeHash) {\n  var result = remove(gratitudeHash, \"\");\n  return result;\n}\n\nfunction studentCreate (studentEntry) {\n  var studentHash = commit(\"student\", studentEntry);\n  return studentHash;\n}\n\nfunction studentRead (studentHash) {\n  var student = get(studentHash);\n  return student;\n}\n\nfunction studentUpdate (studentHash) {\n  var sampleValue={\"extraField\":true};\n  var studentOutHash = update(\"student\", sampleValue, studentHash);\n  return studentOutHash;\n}\n\nfunction studentDelete (studentHash) {\n  var result = remove(studentHash, \"\");\n  return result;\n}\n\nfunction gratitudeBoardCreate (gratitudeBoardEntry) {\n  var gratitudeBoardHash = commit(\"gratitudeBoard\", gratitudeBoardEntry);\n  return gratitudeBoardHash;\n}\n\nfunction gratitudeBoardRead (gratitudeBoardHash) {\n  var gratitudeBoard = get(gratitudeBoardHash);\n  return gratitudeBoard;\n}\n\nfunction gratitudeBoardUpdate (gratitudeBoardHash) {\n  var sampleValue={\"extraField\":true};\n  var gratitudeBoardOutHash = update(\"gratitudeBoard\", sampleValue, gratitudeBoardHash);\n  return gratitudeBoardOutHash;\n}\n\nfunction gratitudeBoardDelete (gratitudeBoardHash) {\n  var result = remove(gratitudeBoardHash, \"\");\n  return result;\n}\n\nfunction boardLinkCreate (boardLinkEntry) {\n  var boardLinkHash = commit(\"boardLink\", boardLinkEntry);\n  return boardLinkHash;\n}\n\nfunction boardLinkRead (boardLinkHash) {\n  var boardLink = get(boardLinkHash);\n  return boardLink;\n}\n\nfunction boardLinkUpdate (boardLinkHash) {\n  var sampleValue={\"extraField\":true};\n  var boardLinkOutHash = update(\"boardLink\", sampleValue, boardLinkHash);\n  return boardLinkOutHash;\n}\n\nfunction boardLinkDelete (boardLinkHash) {\n  var result = remove(boardLinkHash, \"\");\n  return result;\n}\n\nfunction studentLinkCreate (studentLinkEntry) {\n  var studentLinkHash = commit(\"studentLink\", studentLinkEntry);\n  return studentLinkHash;\n}\n\nfunction studentLinkRead (studentLinkHash) {\n  var studentLink = get(studentLinkHash);\n  return studentLink;\n}\n\nfunction studentLinkUpdate (studentLinkHash) {\n  var sampleValue={\"extraField\":true};\n  var studentLinkOutHash = update(\"studentLink\", sampleValue, studentLinkHash);\n  return studentLinkOutHash;\n}\n\nfunction studentLinkDelete (studentLinkHash) {\n  var result = remove(studentLinkHash, \"\");\n  return result;\n}\n\nfunction createGratitudeForBoard (params) {\n  // your custom code here\n  return {};\n}\n\nfunction getGratitudesForBoard (params) {\n  // your custom code here\n  return {};\n}\n\nfunction setStudentName (params) {\n  // your custom code here\n  return {};\n}\n\n\n// -----------------------------------------------------------------\n//  The Genesis Function https://developer.holochain.org/genesis\n// -----------------------------------------------------------------\n\n/**\n * Called only when your source chain is generated\n * @return {boolean} success\n */\nfunction genesis () {\n  return true;\n}\n\n// -----------------------------------------------------------------\n//  Validation functions for every change to the local chain or DHT\n// -----------------------------------------------------------------\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateCommit (entryName, entry, header, pkg, sources) {\n  switch (entryName) {\n    case \"gratitude\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"student\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"gratitudeBoard\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"boardLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"studentLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validatePut (entryName, entry, header, pkg, sources) {\n  switch (entryName) {\n    case \"gratitude\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"student\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"gratitudeBoard\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"boardLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"studentLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {*} entry - the entry data to be set\n * @param {object} header - header for the entry containing properties EntryLink, Time, and Type\n * @param {string} replaces - the hash for the entry being updated\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateMod (entryName, entry, header, replaces, pkg, sources) {\n  switch (entryName) {\n    case \"gratitude\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"student\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"gratitudeBoard\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"boardLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"studentLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {string} hash - the hash of the entry to remove\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateDel (entryName, hash, pkg, sources) {\n  switch (entryName) {\n    case \"gratitude\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"student\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"gratitudeBoard\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"boardLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"studentLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to validate any changes to the local chain or DHT\n * @param {string} entryName - the type of entry\n * @param {string} baseHash - the hash of the base entry being linked\n * @param {?} links - ?\n * @param {*} pkg - the extra data provided by the validate[X]Pkg methods\n * @param {object} sources - an array of strings containing the keys of any authors of this entry\n * @return {boolean} is valid?\n */\nfunction validateLink (entryName, baseHash, links, pkg, sources) {\n  switch (entryName) {\n    case \"gratitude\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"student\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"gratitudeBoard\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"boardLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    case \"studentLink\":\n      // be sure to consider many edge cases for validating\n      // do not just flip this to true without considering what that means\n      // the action will ONLY be successfull if this returns true, so watch out!\n      return false;\n    default:\n      // invalid entry name\n      return false;\n  }\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validatePutPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateModPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateDelPkg (entryName) {\n  return null;\n}\n\n/**\n * Called to get the data needed to validate\n * @param {string} entryName - the name of entry to validate\n * @return {*} the data required for validation\n */\nfunction validateLinkPkg (entryName) {\n  return null;\n}"
+      }
+    ]
+  },
+
+  # TestSets
+  # Auto-Generated test sets for hcdev package
+  "TestSets": [
+    {
+
+      # Name
+      # Name of the Test Set
+      "Name": "gratitude",
+      "TestSet": {
+        "Tests": [
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for gratitudeCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "gratitudeCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": "test",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for gratitudeRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "gratitudeRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "test"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for gratitudeUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "gratitudeUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for gratitudeDelete",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "gratitudeDelete",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for studentCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "studentCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": "test",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for studentRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "studentRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "test"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for studentUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "studentUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for studentDelete",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "studentDelete",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for gratitudeBoardCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "gratitudeBoardCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": "test",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for gratitudeBoardRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "gratitudeBoardRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "test"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for gratitudeBoardUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "gratitudeBoardUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for gratitudeBoardDelete",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "gratitudeBoardDelete",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for boardLinkCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "boardLinkCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": "test",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for boardLinkRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "boardLinkRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "test"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for boardLinkUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "boardLinkUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for boardLinkDelete",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "boardLinkDelete",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for studentLinkCreate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "studentLinkCreate",
+
+            # Input
+            # Input sent to the function
+            "Input": "test",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for studentLinkRead",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "studentLinkRead",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "test"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for studentLinkUpdate",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "studentLinkUpdate",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for studentLinkDelete",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "studentLinkDelete",
+
+            # Input
+            # Input sent to the function
+            "Input": "%h%",
+
+            # Output
+            # Output from the function to validate
+            "Output": "%h%"
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for createGratitudeForBoard",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "createGratitudeForBoard",
+
+            # Input
+            # Input sent to the function
+            "Input": "",
+
+            # Output
+            # Output from the function to validate
+            "Output": {}
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for getGratitudesForBoard",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "getGratitudesForBoard",
+
+            # Input
+            # Input sent to the function
+            "Input": "",
+
+            # Output
+            # Output from the function to validate
+            "Output": {}
+          },
+          {
+
+            # Convey
+            # Description of this test
+            "Convey": "auto-generated test for setStudentName",
+
+            # Zome
+            # The zome this test is related to
+            "Zome": "gratitude",
+
+            # Function Name
+            # The function to test
+            "FnName": "setStudentName",
+
+            # Input
+            # Input sent to the function
+            "Input": "",
+
+            # Output
+            # Output from the function to validate
+            "Output": {}
+          }
+        ]
+      }
+    }
+  ]
+}

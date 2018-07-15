@@ -1,0 +1,165 @@
+{
+  "Tests": [
+    {
+      "Convey": "auto-generated test for gratitudeCreate",
+      "Zome": "gratitude",
+      "FnName": "gratitudeCreate",
+      "Input": "test",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for gratitudeRead",
+      "Zome": "gratitude",
+      "FnName": "gratitudeRead",
+      "Input": "%h%",
+      "Output": "test"
+    },
+    {
+      "Convey": "auto-generated test for gratitudeUpdate",
+      "Zome": "gratitude",
+      "FnName": "gratitudeUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for gratitudeDelete",
+      "Zome": "gratitude",
+      "FnName": "gratitudeDelete",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for studentCreate",
+      "Zome": "gratitude",
+      "FnName": "studentCreate",
+      "Input": "test",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for studentRead",
+      "Zome": "gratitude",
+      "FnName": "studentRead",
+      "Input": "%h%",
+      "Output": "test"
+    },
+    {
+      "Convey": "auto-generated test for studentUpdate",
+      "Zome": "gratitude",
+      "FnName": "studentUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for studentDelete",
+      "Zome": "gratitude",
+      "FnName": "studentDelete",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for gratitudeBoardCreate",
+      "Zome": "gratitude",
+      "FnName": "gratitudeBoardCreate",
+      "Input": "test",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for gratitudeBoardRead",
+      "Zome": "gratitude",
+      "FnName": "gratitudeBoardRead",
+      "Input": "%h%",
+      "Output": "test"
+    },
+    {
+      "Convey": "auto-generated test for gratitudeBoardUpdate",
+      "Zome": "gratitude",
+      "FnName": "gratitudeBoardUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for gratitudeBoardDelete",
+      "Zome": "gratitude",
+      "FnName": "gratitudeBoardDelete",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for boardLinkCreate",
+      "Zome": "gratitude",
+      "FnName": "boardLinkCreate",
+      "Input": "test",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for boardLinkRead",
+      "Zome": "gratitude",
+      "FnName": "boardLinkRead",
+      "Input": "%h%",
+      "Output": "test"
+    },
+    {
+      "Convey": "auto-generated test for boardLinkUpdate",
+      "Zome": "gratitude",
+      "FnName": "boardLinkUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for boardLinkDelete",
+      "Zome": "gratitude",
+      "FnName": "boardLinkDelete",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for studentLinkCreate",
+      "Zome": "gratitude",
+      "FnName": "studentLinkCreate",
+      "Input": "test",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for studentLinkRead",
+      "Zome": "gratitude",
+      "FnName": "studentLinkRead",
+      "Input": "%h%",
+      "Output": "test"
+    },
+    {
+      "Convey": "auto-generated test for studentLinkUpdate",
+      "Zome": "gratitude",
+      "FnName": "studentLinkUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for studentLinkDelete",
+      "Zome": "gratitude",
+      "FnName": "studentLinkDelete",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for createGratitudeForBoard",
+      "Zome": "gratitude",
+      "FnName": "createGratitudeForBoard",
+      "Input": "",
+      "Output": {}
+    },
+    {
+      "Convey": "auto-generated test for getGratitudesForBoard",
+      "Zome": "gratitude",
+      "FnName": "getGratitudesForBoard",
+      "Input": "",
+      "Output": {}
+    },
+    {
+      "Convey": "auto-generated test for setStudentName",
+      "Zome": "gratitude",
+      "FnName": "setStudentName",
+      "Input": "",
+      "Output": {}
+    }
+  ]
+}

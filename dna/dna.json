@@ -1,0 +1,170 @@
+{
+  "Version": 1,
+  "UUID": "9b8d256c-b907-4348-94ef-a3b489fe0e51",
+  "Name": "gratitude",
+  "Properties": {
+    "description": "gratitude app demo",
+    "language": "en"
+  },
+  "PropertiesSchemaFile": "properties_schema.json",
+  "DHTConfig": {
+    "HashType": "sha2-256"
+  },
+  "Zomes": [
+    {
+      "Name": "gratitude",
+      "Description": "track gratitude for students",
+      "RibosomeType": "js",
+      "CodeFile": "gratitude.js",
+      "Entries": [
+        {
+          "Name": "gratitude",
+          "Required": true,
+          "DataFormat": "string",
+          "Sharing": "public"
+        },
+        {
+          "Name": "student",
+          "Required": true,
+          "DataFormat": "string",
+          "Sharing": "public"
+        },
+        {
+          "Name": "gratitudeBoard",
+          "Required": true,
+          "DataFormat": "string",
+          "Sharing": "public"
+        },
+        {
+          "Name": "boardLink",
+          "Required": true,
+          "DataFormat": "links",
+          "Sharing": "public"
+        },
+        {
+          "Name": "studentLink",
+          "Required": true,
+          "DataFormat": "links",
+          "Sharing": "public"
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "gratitudeCreate",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "gratitudeRead",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "gratitudeUpdate",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "gratitudeDelete",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "studentCreate",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "studentRead",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "studentUpdate",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "studentDelete",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "gratitudeBoardCreate",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "gratitudeBoardRead",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "gratitudeBoardUpdate",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "gratitudeBoardDelete",
+          "CallingType": "string",
+          "Exposure": "public"
+        },
+        {
+          "Name": "boardLinkCreate",
+          "CallingType": "links",
+          "Exposure": "public"
+        },
+        {
+          "Name": "boardLinkRead",
+          "CallingType": "links",
+          "Exposure": "public"
+        },
+        {
+          "Name": "boardLinkUpdate",
+          "CallingType": "links",
+          "Exposure": "public"
+        },
+        {
+          "Name": "boardLinkDelete",
+          "CallingType": "links",
+          "Exposure": "public"
+        },
+        {
+          "Name": "studentLinkCreate",
+          "CallingType": "links",
+          "Exposure": "public"
+        },
+        {
+          "Name": "studentLinkRead",
+          "CallingType": "links",
+          "Exposure": "public"
+        },
+        {
+          "Name": "studentLinkUpdate",
+          "CallingType": "links",
+          "Exposure": "public"
+        },
+        {
+          "Name": "studentLinkDelete",
+          "CallingType": "links",
+          "Exposure": "public"
+        },
+        {
+          "Name": "createGratitudeForBoard",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "getGratitudesForBoard",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "setStudentName",
+          "CallingType": "json",
+          "Exposure": "public"
+        }
+      ]
+    }
+  ]
+}
