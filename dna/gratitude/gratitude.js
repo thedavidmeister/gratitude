@@ -9,13 +9,18 @@
 // -----------------------------------------------------------------
 
 function gratitudeCreate (gratitudeEntry) {
+  console.log('foo');
+  console.log('entry', gratitudeEntry);
   var gratitudeHash = commit("gratitude", gratitudeEntry);
+  console.log(gratitudeHash);
   return gratitudeHash;
 }
 
 function gratitudeRead (gratitudeHash) {
-  var gratitude = get(gratitudeHash);
-  return gratitude;
+  console.log('gratitudeRead');
+  console.log(gratitudeHash);
+  var gratitude = get(gratitudeHash, { GetMask: HC.GetMask.Entry + HC.GetMask.EntryType });
+  return JSON.stringify(gratitude);
 }
 
 function gratitudeUpdate (gratitudeHash) {
@@ -155,12 +160,19 @@ function genesis () {
  * @return {boolean} is valid?
  */
 function validateCommit (entryName, entry, header, pkg, sources) {
+  console.log('*');
+  console.log(entryName);
+  console.log(entry);
+  console.log(header);
+  console.log(pkg);
+  console.log(sources);
+
   switch (entryName) {
     case "gratitude":
       // be sure to consider many edge cases for validating
       // do not just flip this to true without considering what that means
       // the action will ONLY be successfull if this returns true, so watch out!
-      return false;
+      return -1 != entry.indexOf("great");
     case "student":
       // be sure to consider many edge cases for validating
       // do not just flip this to true without considering what that means
@@ -202,7 +214,7 @@ function validatePut (entryName, entry, header, pkg, sources) {
       // be sure to consider many edge cases for validating
       // do not just flip this to true without considering what that means
       // the action will ONLY be successfull if this returns true, so watch out!
-      return false;
+      return true;
     case "student":
       // be sure to consider many edge cases for validating
       // do not just flip this to true without considering what that means
